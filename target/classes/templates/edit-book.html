@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sửa sách - Lab03</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+<h1>Sửa sách</h1>
+<form th:action="@{/books/update}" method="post" th:object="${book}">
+    <input type="hidden" th:field="*{id}" />
+    <label>Title: <input type="text" th:field="*{title}" required/></label><br/>
+    <label>Author: <input type="text" th:field="*{author}" required/></label><br/>
+    <button type="submit">Save</button>
+    <a th:href="@{/books}">Cancel</a>
+</form>
+</body>
+</html>
